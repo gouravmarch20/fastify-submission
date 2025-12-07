@@ -11,6 +11,8 @@ function evaluationWorker(queue) {
   new Worker(
     "EvaluationQueue",
     async (job) => {
+      console.log(`evaluationWorker_debug`, job);
+
       if (job.name === "EvaluationJob") {
         try {
           console.log("hit websocket problem is solved");
